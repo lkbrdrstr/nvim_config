@@ -1,3 +1,4 @@
-require "loki.set"
-require "loki.remap"
-require "loki.plugins"
+require "config.options"
+require "config.autocmds"
+require "config.keymaps"
+require "config.lazy"
