@@ -86,6 +86,12 @@ return {
                         local lua_opts = lsp_zero.nvim_lua_ls()
                         require "lspconfig".lua_ls.setup(lua_opts)
                     end,
+                    texlab = function()
+                        require "lspconfig".texlab.setup {
+                            executable = "tectonic",
+                            args = { "-X", "compile", "%", "--synctex", "--keep-logs", "--keep-intermediates" }
+                        }
+                    end,
                 }
             }
         end
