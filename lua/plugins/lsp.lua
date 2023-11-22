@@ -94,9 +94,13 @@ return {
           end,
           rust_analyzer = function()
             require "lspconfig".rust_analyzer.setup {
-              checkOnSave = {
-                enable = true,
-                command = "clippy",
+              settings = {
+                ["rust-analyzer"] = {
+                  checkOnSave = {
+                    enable = true,
+                    command = "clippy",
+                  }
+                }
               }
             }
           end,
