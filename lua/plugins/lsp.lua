@@ -65,6 +65,11 @@ return {
       lsp_zero.on_attach(function(client, bufnr)
         local opts = { buffer = bufnr, remap = false }
 
+        vim.api.nvim_create_autocmd(
+          { "BufWritePre" },
+          { command = "LspZeroFormat" }
+        )
+
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, opts)
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
