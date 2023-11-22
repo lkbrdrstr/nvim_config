@@ -22,16 +22,17 @@ local get_visual = function(args, parent)
 end
 
 return {
-  s({ trig = "ff", dscr = "Expands 'ff' into '\frac{}{}'" },
-    {
-      t("\\frac{"),
-      i(1),
-      t("}{"),
-      i(2),
-      t("}")
-    }
+  s({ trig = "([^%a])ff", snippetType = "autosnippet", wordTrig = false, regTrig = true },
+    fmta(
+      "<>\\frac{<>}{<>}",
+      {
+        f(function(_, snip) return snip.captures[1] end),
+        d(1, get_visual),
+        d(2, get_visual),
+      }
+    )
   ),
-  s({ trig = "eq*", dscr = "A LaTeX equation* environment" },
+  s({ trig = "eq*", snippetType = "autosnippet" },
     fmt(
       [[
         \begin{equation*}
@@ -44,7 +45,7 @@ return {
       { delimiters = "<>" }
     )
   ),
-  s({ trig = "a*", dscr = "A LaTeX align* environment" },
+  s({ trig = "a*", snippetType = "autosnippet" },
     fmta(
       [[
         \begin{align*}
