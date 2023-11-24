@@ -55,6 +55,17 @@ return {
       { i(1) }
     )
   ),
+  s({ trig = ";Sum", snippetType = "autosnippet" },
+    fmta(
+      [[
+        \sum_{<>}^{<>}
+      ]],
+      {
+        i(1),
+        i(2),
+      }
+    )
+  ),
   s({ trig = "new", snippetType = "autosnippet" },
     fmta( -- fmta automatically uses <> for formatting, fmt uses {}
       [[
@@ -88,7 +99,7 @@ return {
       }
     )
   ),
-  s({ trig = "([^%a])ee", snippetType = "autosnippet", wordTrig = false, regTrig = true},
+  s({ trig = "([^%a])ee", snippetType = "autosnippet", wordTrig = false, regTrig = true },
     fmta(
       "<>e^{<>}",
       {
@@ -101,21 +112,21 @@ return {
     fmta(
       [[\section*{<>}]],
       { i(1) }
-      ),
+    ),
     { condition = line_begin }
   ),
   s({ trig = "h2", snippetType = "autosnippet" },
     fmta(
       [[\subsection*{<>}]],
       { i(1) }
-      ),
+    ),
     { condition = line_begin }
   ),
   s({ trig = "h3", snippetType = "autosnippet" },
     fmta(
       [[\subsubsection*{<>}]],
       { i(1) }
-      ),
+    ),
     { condition = line_begin }
   )
 }
