@@ -1,8 +1,4 @@
 return {
-    "kylechui/nvim-surround",
+    "tpope/vim-surround",
     version = "*",
-    event = "VeryLazy",
-    config = function()
-        require "nvim-surround".setup {}
-    end,
 }
