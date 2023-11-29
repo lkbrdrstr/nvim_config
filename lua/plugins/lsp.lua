@@ -79,7 +79,18 @@ return {
       end)
 
       require "mason-lspconfig".setup {
-        ensure_installed = {},
+        ensure_installed = {
+          "clangd",
+          "gopls",
+          -- "latexindent",
+          "lua_ls",
+          "marksman",
+          "rust_analyzer",
+          "taplo",
+          "texlab",
+          "typst_lsp",
+          "vimls",
+        },
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
