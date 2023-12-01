@@ -1,4 +1,7 @@
 return {
   "matbme/JABS.nvim",
-  enabled = false,
+  enabled = true,
+  init = function()
+    require "jabs".setup()
+  end,
 }
