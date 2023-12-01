@@ -1,4 +1,4 @@
 return {
   "sunjon/shade.nvim",
-  enabled = false,
+  enabled = true,
 }
